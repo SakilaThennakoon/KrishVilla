@@ -5,21 +5,24 @@ class Login extends CI_Controller {
 
 	public function index()
 	{   
-		$this->load->view('login/sign_in');
+		$this->load->view('header');
+		$this->load->view('home');
+		$this->load->view('footer');
         
 		
 	}
 
     public function register()
-	{
+	{	
+		$this->load->view('header');
 		$this->load->view('login/register');
-        
+        $this->load->view('footer');
 		
 	}
 
     public function save_user()
     {   
-        echo json_encode(array('status' =>$this->input->post()));
+        // echo json_encode(array('status' =>$this->input->post()));
         
 		// $this->load->model('User_model');
 		// $r = $this->User_model->insert_entry($this->input->post());
@@ -31,6 +34,9 @@ class Login extends CI_Controller {
 		// }
 		
 	}
+
+
+        
 }
 
 
