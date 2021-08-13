@@ -69,9 +69,8 @@
 	          <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
-				<a class="dropdown-item" href="categories.html">Categories</a>
-              	<a class="dropdown-item" href="vegetables.html">Vegetables</a>
-              	<a class="dropdown-item" href="fruits.html">Fruits</a>
+              	<a class="dropdown-item" href="<?php echo base_url(); ?>index.php/category/vegitables">Vegetables</a>
+              	<a class="dropdown-item" href="<?php echo base_url(); ?>index.php/category/fruits">Fruits</a>
 		  </div>
             </li>
 			  <li class="nav-item"><a href="specialoffer.html" class="nav-link">Special Offer</a></li>
