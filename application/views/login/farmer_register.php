@@ -1,5 +1,5 @@
 <div class="container" style="padding-top: 20px;">
-    <h3  style="text-align: center; color: #82ae46;">Customer Register</h3>  
+    <h3  style="text-align: center; color: #82ae46;">Farmer Register</h3>  
     <form class="row g-3">
         
         <div class="col-12">

@@ -20,6 +20,14 @@ class Login extends CI_Controller {
 		
 	}
 
+	public function farmer_register()
+	{	
+		$this->load->view('header');
+		$this->load->view('login/farmer_register');
+        $this->load->view('footer');
+		
+	}
+
     public function save_user()
     {   
         // echo json_encode(array('status' =>$this->input->post()));

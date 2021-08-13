@@ -20,6 +20,9 @@
                             <div id="register-link" class="text-right">
                                 <a href="<?php echo base_url(); ?>index.php/login/register" >Register here</a>
                             </div>
+                            <div id="register-link" class="text-right">
+                                <a href="<?php echo base_url(); ?>index.php/login/farmer_register" >Farmer Register here</a>
+                            </div>
                         </form>
                     </div>
                 </div>
