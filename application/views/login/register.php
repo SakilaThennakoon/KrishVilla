@@ -1,6 +1,27 @@
+<!doctype html>
+<html>
+<head lang="en">
+<meta charset="utf-8">
+<title>Ajax File Upload with jQuery and PHP</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+<script type="text/javascript" src="js/jquery-1.11.3-jquery.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+
+<body>
+<div class="container">
+<div class="row">
+<div class="col-md-8">
+
 <div class="container" style="padding-top: 20px;">
     <h3  style="text-align: center; color: #82ae46;">Customer Register</h3>  
     <form class="row g-3">
+
+        <div class="form-control">
+        <input id="uploadImage" type="file" accept="image/*" name="image" />
+<div id="preview"><img src="filed.png" /></div><br>
+<input class="btn btn-success" type="submit" value="Upload">
         
         <div class="col-12">
             <label for="inputfullName" class="form-label">Full Name</label>
@@ -43,3 +64,4 @@
         </div>
       </form>
 </div>
+</body>
