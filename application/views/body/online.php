@@ -1,4 +1,4 @@
-<?php var_dump($categoryList[2]); ?>
+
 <form id="itemForm">
     <div class="col-xl-3 ">
         <div class="form-group">
@@ -50,7 +50,7 @@
         </div>
     </div>
 
-    <div class="col-xl-3 ">
+    <!-- <div class="col-xl-3 ">
         <div class="form-group">
         <label for="exampleFormControlSelect1">Batch No</label>
         <input id="batch" name="batch" class="form-control" type="text" placeholder="No">
@@ -61,7 +61,7 @@
         <div class="form-group">
         <label for="exampleFormControlSelect1">Expire Date</label>
         <input id="expire" name="expire" class="form-control" type="date" placeholder="kg">
-        </div>
+        </div> -->
 
     </div>
 
@@ -82,12 +82,20 @@
         // alert("Hooo");
         $("#category").change(function(e){
             // console.log(e.target.value);
+            var $dropdown = $("#itemName");
+            $dropdown.empty();
             $.ajax({
                 url: '<?php echo base_url(); ?>index.php/cart/getItems/' + e.target.value,
                 method : 'get',
                 datatype : 'json',
                 success : function(response){
-                    console.log(JSON.parse(response));
+                    // console.log(JSON.parse(response));
+                    const itemList = JSON.parse(response);
+                    // var $dropdown = $("#itemName");
+                    $dropdown.append('<option>Please Select Items</option>');
+                    itemList.map(function(selectCategory){
+                        $dropdown.append($("<option />").val(selectCategory.d_id).text(selectCategory.name));
+                    });
                 }
 
             });
@@ -108,7 +116,7 @@
             //     // }
             });
 
-        });
+        })
 
 
 
@@ -117,7 +125,7 @@
             var $dropdown = $('#price');
             $dropdown.empty();
             $.ajax({
-                url: 'http://localhost/project/heshan2/index.php/items/getItemPrice/' + e.target.value,
+                url: '<?php echo base_url(); ?>index.php/cart/getPrice/' + e.target.value,
                 method : 'get',
                 datatype : 'json',
                 success : function(response){
@@ -125,7 +133,7 @@
                     // console.log(item,"ssssss");
                     item?.map(function(selectItem,index){
                         // console.log(item,"ssssss");
-                        $("#price").val(selectItem.itemPrice);
+                        $("#price").val(selectItem.price);
                     })
                 }
             });
@@ -147,7 +155,7 @@
   
         $('#sumbitBtn').click(function(e){
             $.ajax({
-                url: 'http://localhost/project/heshan2/index.php/items/saveItems/' + e.target.value,
+                url: '<?php echo base_url(); ?>index.php/cart/saveItems/' + e.target.value,
                 method : 'post',
                 data: $('#itemForm').serialize(),
                 datatype : 'json',

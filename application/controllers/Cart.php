@@ -42,10 +42,36 @@ class Cart extends CI_Controller {
 	}
 
 
-    public function additems()
+    public function getPrice($id)
 	{
-
-		$this->load->view('items/additems',$data);
+		$this->load->model('Purchase_model');
+		$PriceList = $this->Purchase_model->get_price($id);
+		echo json_encode($PriceList);
 		
 	}
+
+    public function saveItems()
+	{
+		$this->load->model('Purchase_model');
+		$item = $this->Purchase_model->save_items($this->input->post());
+		echo json_encode($item);
+		// var_dump ($this->input->post());
+	}
+
+
+    public function checkout() {
+
+        $this->load->model('Purchase_model');
+		$buy = $this->Purchase_model->pay_total();
+
+		$data =array(
+			"currentController" =>$this->router->fetch_class(),
+			"currentMethod" =>$this->router->fetch_class(),
+			"buy" => $buy
+		);
+
+        $this->load->view('header');
+        $this->load->view('body/checkout',$data);
+        $this->load->view('footer');
+    }
 }
