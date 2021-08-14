@@ -32,6 +32,8 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>source/css/flaticon.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>source/css/icomoon.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>source/css/style.css">
+	<script src="<?php echo base_url(); ?>source/js/jquery.min.js"></script>
+	<script src="<?php echo base_url(); ?>source/jquery.min.js"></script>
   </head> 
 
   <body class="goto-here">
@@ -73,11 +75,12 @@
               	<a class="dropdown-item" href="<?php echo base_url(); ?>index.php/category/fruits">Fruits</a>
 		  </div>
             </li>
+			<li class="nav-item"><a href="<?php echo base_url(); ?>index.php/cart/purchase" class="nav-link">Online Purchase</a></li>
 			  <li class="nav-item"><a href="specialoffer.html" class="nav-link">Special Offer</a></li>
         <li class="nav-item"><a href="farms.html" class="nav-link">Farms</a></li>
         <li class="nav-item"><a href="aboutus.html" class="nav-link">About Us</a></li>
         <li class="nav-item"><a href="contactus.html" class="nav-link">Contact Us</a></li>
-        <li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
+        <li class="nav-item cta cta-colored"><a href="<?php echo base_url(); ?>index.php/cart/index" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
 		<li class="nav-item"><a href="<?php echo base_url(); ?>index.php/login/index" class="nav-link" style="background-color: #82ae46 ;padding: 10px;border-radius: 10px;">Login</a></li>
 	      
       </ul>

@@ -57,4 +57,21 @@ class Category extends CI_Controller {
 		$this->load->view('footer');
 		
 	}
+
+    public function addToCart($id) {
+
+
+        $this->load->model('Menu_model');
+        $dishesh = $this->Menu_model->add_cart($id);
+        $data = array (
+            'id'    => $dishesh['d_id'],
+            'r_id'  => $dishesh['r_id'],
+            'qty'   =>1,
+            'price' => $dishesh['price'],
+            'name' => $dishesh['name'],
+            'image' => $dishesh['img']
+        );
+        $this->cart->insert($data);
+        redirect(base_url(). 'cart/index');
+    }
 }
