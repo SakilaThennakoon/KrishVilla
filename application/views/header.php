@@ -73,13 +73,13 @@
               <div class="dropdown-menu" aria-labelledby="dropdown04">
               	<a class="dropdown-item" href="<?php echo base_url(); ?>index.php/category/vegitables">Vegetables</a>
               	<a class="dropdown-item" href="<?php echo base_url(); ?>index.php/category/fruits">Fruits</a>
+				<a class="dropdown-item" href="#">Special Offer</a>
 		  </div>
             </li>
 			<li class="nav-item"><a href="<?php echo base_url(); ?>index.php/cart/purchase" class="nav-link">Online Purchase</a></li>
-			  <li class="nav-item"><a href="specialoffer.html" class="nav-link">Special Offer</a></li>
-        <li class="nav-item"><a href="farms.html" class="nav-link">Farms</a></li>
-        <li class="nav-item"><a href="aboutus.html" class="nav-link">About Us</a></li>
-        <li class="nav-item"><a href="contactus.html" class="nav-link">Contact Us</a></li>
+        <li class="nav-item"><a href="<?php echo base_url(); ?>index.php/home/farms" class="nav-link">Farms</a></li>
+        <li class="nav-item"><a href="<?php echo base_url(); ?>index.php/home/about" class="nav-link">About Us</a></li>
+        <li class="nav-item"><a href="<?php echo base_url(); ?>index.php/home/contact" class="nav-link">Contact Us</a></li>
         <li class="nav-item cta cta-colored"><a href="<?php echo base_url(); ?>index.php/cart/checkout" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
 		<li class="nav-item"><a href="<?php echo base_url(); ?>index.php/login/index" class="nav-link" style="background-color: #82ae46 ;padding: 10px;border-radius: 10px;">Login</a></li>
 	      
