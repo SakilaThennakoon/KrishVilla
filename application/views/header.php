@@ -42,15 +42,18 @@
     		<div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
 	    		<div class="col-lg-12 d-block">
 		    		<div class="row d-flex">
-		    			<div class="col-md pr-4 d-flex topper align-items-center">
+		    			<div class="col-md-2 pr-4 d-flex topper align-items-center">
 					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
 						    <span class="text">+94112255255</span>
 					    </div>
-					    <div class="col-md pr-4 d-flex topper align-items-center">
+					    <div class="col-md-2 pr-4 d-flex topper align-items-center">
 					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
 						    <span class="text">krishvilla@gmail.com</span>
 					    </div>
-					    <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
+						<div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
+						<marquee direction="right"><span class="text"><?php if(isset($_SESSION['logged_user'])){echo "Welcome ".($_SESSION['logged_user']);}?></span></span></marquee>
+					    </div>
+					    <div class="col-md-3 pr-4 d-flex topper align-items-center text-lg-right">
 						    <span class="text">5 working days delivery</span>
 					    </div>
 				    </div>
@@ -76,12 +79,42 @@
 				<a class="dropdown-item" href="#">Special Offer</a>
 		  </div>
             </li>
-			<li class="nav-item"><a href="<?php echo base_url(); ?>index.php/cart/purchase" class="nav-link">Online Purchase</a></li>
+			<li class="nav-item"><a href="<?php echo base_url(); ?>index.php/cart/purchase" class="nav-link">Order Now</a></li>
         <li class="nav-item"><a href="<?php echo base_url(); ?>index.php/home/farms" class="nav-link">Farms</a></li>
         <li class="nav-item"><a href="<?php echo base_url(); ?>index.php/home/about" class="nav-link">About Us</a></li>
         <li class="nav-item"><a href="<?php echo base_url(); ?>index.php/home/contact" class="nav-link">Contact Us</a></li>
         <li class="nav-item cta cta-colored"><a href="<?php echo base_url(); ?>index.php/cart/checkout" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
-		<li class="nav-item"><a href="<?php echo base_url(); ?>index.php/login/index" class="nav-link" style="background-color: #82ae46 ;padding: 10px;border-radius: 10px;">Login</a></li>
+		<li class="nav-item"><a href="<?php echo base_url(); ?>index.php/login/index" class="nav-link">Login</a></li>
+
+		<li class="nav-item dropdown no-arrow">
+            <a class="nav-link dropdown" href="#" id="userDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="oi oi-menu"></span>
+                <!-- <img class="img-profile rounded-circle"
+                    src="img/thumbnail_F46198BBD2464727B69472BAF81C8AA9.png"> -->
+            </a>
+            <!-- Dropdown - User Information -->
+            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="../student.html">
+                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Profile
+                </a>
+                <a class="dropdown-item" href="#">
+                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Settings
+                </a>
+                <a class="dropdown-item" href="#">
+                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Activity Log
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="<?php echo base_url(); ?>index.php/login/logout" >
+                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Logout
+                </a>
+            </div>
+        </li>
 	      
       </ul>
 	      </div>

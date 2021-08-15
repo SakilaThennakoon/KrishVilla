@@ -58,9 +58,11 @@ class Category extends CI_Controller {
 		
 	}
 
-    public function addToCart($id) {
-
-
+    public function addToCart($id) 
+    {   
+        if(!isset($_SESSION['logged_user'])){
+			redirect('login/index');
+		}
         $this->load->model('Menu_model');
         $dishesh = $this->Menu_model->add_cart($id);
         $data = array (
