@@ -3,7 +3,7 @@
             <div id="login-row" class="row justify-content-center align-items-center">
                 <div id="login-column" class="col-md-6">
                     <div id="login-box" class="col-md-12">
-                        <form id="login-form" class="form" action="<?php echo base_url(); ?>index.php/login/index" method="post">
+                        <form id="login-form" class="form" action="<?php echo base_url(); ?>index.php/login/authenticate" method="post">
                             <h3 class="text-center " style="color: #82ae46;">Login</h3>
                             <div class="form-group">
                                 <label for="username" >Username:</label><br>
