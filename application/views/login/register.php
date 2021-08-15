@@ -16,13 +16,19 @@
 
 <div class="container" style="padding-top: 20px;">
     <h3  style="text-align: center; color: #82ae46;">Customer Register</h3>  
-    <form class="row g-3">
 
-        <div class="form-control">
-        <input id="uploadImage" type="file" accept="image/*" name="image" />
-<div id="preview"><img src="filed.png" /></div><br>
-<input class="btn btn-success" type="submit" value="Upload">
-        
+    <form method="post" action="" enctype="multipart/form-data" id="myform">
+          <div class='preview'>
+            <label for="inputImage" class="form-label">Profile Photo</label>
+              <img src="" id="img" width="100" height="100">
+          </div>
+          <div >
+              <input type="file" id="file" name="file" accept=".jpg">
+              <input type="button" class="button" value="Upload" id="but_upload">
+          </div>
+      </form>
+      
+    <form class="row g-3">
         <div class="col-12">
             <label for="inputfullName" class="form-label">Full Name</label>
             <input id="fullName" name="fullName" type="text" class="form-control form-control-sm">
