@@ -18,6 +18,10 @@ class Cart extends CI_Controller {
 
     public function purchase() {
 
+		if(!isset($_SESSION['logged_user'])){
+			redirect('login/index');
+		}
+
         $this->load->model('Purchase_model');
 		$categoryList = $this->Purchase_model->get_restaurant();
 		$data =array(
@@ -60,6 +64,10 @@ class Cart extends CI_Controller {
 
 
     public function checkout() {
+
+		if(!isset($_SESSION['logged_user'])){
+			redirect('login/index');
+		}
 
         $this->load->model('Purchase_model');
 		$buy = $this->Purchase_model->pay_total();

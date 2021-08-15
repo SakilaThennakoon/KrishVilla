@@ -15,7 +15,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="remember-me" ><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
-                                <button type="submit" class="btn btn-primary">Login</button>
+                                <button id="submit" name="submit" type="submit" class="btn btn-primary">Login</button>
                             </div>
                             <div id="register-link" class="text-right">
                                 <a href="<?php echo base_url(); ?>index.php/login/register" >Register here</a>
