@@ -13,9 +13,9 @@ class User_model extends CI_Model {
                 "phone"  => $data["imobileNumber"],
                 "email"     => $data["email"],
                 "user_role"  => $data["hidden"],
-                "password"     => $data["passWord"],
+                "password"     => md5($data["passWord"]),
                 "photo_upload"  => $data["upload"]
-                // "password"  => md5($data["Password"])
+                // "password"  => md5($data["passWord"])
             );
 
             $result = $this->db->insert('users', $dataset);
@@ -36,7 +36,7 @@ class User_model extends CI_Model {
                 "phone"  => $data["imobileNumber"],
                 "email"     => $data["eMail"],
                 "user_role"  => $data["userRole"],
-                "password"     => $data["passWord"],
+                "password"     => md5($data["passWord"]),
                 "photo_upload"  => $data["upload"]
                 // "password"  => md5($data["Password"])
             );
@@ -49,7 +49,7 @@ class User_model extends CI_Model {
         {
            $query = $this->db->get_where('users',array(
                'email' => $data['username'], 
-               'password' => $data['password'])
+               'password' => md5($data["password"]))
             );
            return $query->result_array();
            

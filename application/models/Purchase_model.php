@@ -29,6 +29,12 @@ class Purchase_model extends CI_Model
         return $query->result_array(); 
      }
 
+     public function get_name_item($id)
+     {
+        $query = $this->db->get_where('products', array('id' => $id));
+        return $query->result_array(); 
+     }
+
      public function save_items($postData)
      {  
         // var_dump($postData);
@@ -36,7 +42,9 @@ class Purchase_model extends CI_Model
            "qty" => $postData['quantity'],
            "amount" => $postData['total'],
            "product_id" => $postData['category'],
-           "item_name" => $postData['itemName']
+           "item_name" => $postData['pro_name'],
+           "user_id" => $postData['user'],
+           "product_id" => $postData['itemName']
         );
         $query = $this->db->insert('orders_item',$data);
         return $query; 
@@ -59,29 +67,6 @@ class Purchase_model extends CI_Model
          $query = $this->db->insert('orders_item',$data);
          return $query; 
      }
-
-     public function scoreboard() 
-     {
-      $query = $this->db->get('products', 'id');
-
-
-
-      // $query = $this->db->get_where('products', array('id' => 2));
-        return $query->result_array(); 
-      // $q = $this->db->select('products.id, orders_item.*') //select what we need
-      //                 ->join('orders_item', 'products.id = orders_item.id') //do join
-      //                 ->where(['products.name' => $id]) //where clause
-      //                 ->get('products'); 
-      // var_dump($id);
-      // return $q->result_array();
-      // return ($q->num_rows() > 0) ? $q->result_array() : array(); //is there something to return? otherwise return an empty array
-    }
-   //  $q = $this->db->select('user_account.login_id, teacher.*') //select what we need
-   //                    ->join('teacher', 'user_account.login_id = teacher.teacher_id') //do join
-   //                    ->where(['user_account.id' => $id]) //where clause
-   //                    ->get('user_account'); 
-
-     
 
 
 }

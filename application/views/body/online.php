@@ -1,16 +1,16 @@
 
 <div class="container" style="padding-top: 20px;">
-    <h4  style="text-align: center; color: #82ae46;">Select Vegitables </h4>
+    <h4  style="text-align: center; color: #82ae46;">Get from here that you want </h4>
 </div>
 
 <form id="itemForm" class="align-items-center" style="padding-top: 50px;">
     <div class="container-fluid padding dish-card" >
         <div class="row" >
-            <div class="col-xl-3 " >
+            <div class="col-xl-2 " >
                 <div class="form-group">
                     <label  for="exampleFormControlSelect1">Category</label>
                     <select id="category" name="category" class="form-control">
-                        <option>Please Select Category</option>
+                        <option>Select Category</option>
                             <?php
                 
                             foreach ($categoryList as $category){
@@ -22,23 +22,34 @@
                 </div>
             </div>
 
-            <div class="col-xl-3 ">
+            <div class="col-xl-2 ">
                 <div class="form-group">
-                    <label for="exampleFormControlSelect1">Items</label>
+                    <label for="exampleFormControlSelect1">Item</label>
                     <select  id="itemName" name="itemName" class="form-control">
-                    <option>Please Select Items</option>
+                    <option>Select Item</option>
 
                     </select>
                 </div>
             </div>
 
-            
+
+                <input id="user" name="user" class="form-control" readonly="true" type="hidden" value="<?php if(isset($_SESSION['user_id'])){
+					echo ($_SESSION['user_id']);
+					}else{
+						echo "Login";
+					}?>" >
+
+
             <div class="col-xl-1 ">
                 <div class="form-group">
-                <label for="exampleFormControlSelect1">Price</label>
-                <input id="price" class="form-control" readonly="true" type="text" placeholder="ruppes">
+                <label for="exampleFormControlSelect1">Price (Rs)</label>
+                <input id="price" class="form-control" readonly="true" type="text" >
                 </div>
             </div>
+
+
+                <input id="pro_name" name="pro_name" type="hidden" class="form-control" readonly="true" type="text">
+
 
             <div class="col-xl-1 ">
                 <div class="form-group">
@@ -49,8 +60,8 @@
 
             <div class="col-xl-2 ">
                 <div class="form-group">
-                <label for="exampleFormControlSelect1">Total</label>
-                <input id="total" name="total" class="form-control" readonly="true" type="text" placeholder="ruppes">
+                <label for="exampleFormControlSelect1">Total (Rs)</label>
+                <input id="total" name="total" class="form-control" readonly="true" type="text" >
                 </div>
             </div>
             </div>
@@ -59,12 +70,12 @@
             </div>
         </div>
     </div>
-</form> 
+</form> </br></br></br></br>
 
 <!-- ---------------------------------------- Second form data ---------------------------------------------------------- -->
 
 
-<div class="container" style="padding-top: 20px;">
+<!-- <div class="container" style="padding-top: 20px;">
     <h4  style="text-align: center; color: #82ae46;">Select Fruits </h4>
 </div>
 
@@ -77,7 +88,7 @@
                     <label for="exampleFormControlSelect1">Category</label>
                     <select id="category1" name="category1" class="form-control">
                         <option>Please Select Category</option>
-                            <?php
+                            <php
                 
                             foreach ($categoryList as $category){
                                 $id = $category['id'];
@@ -121,13 +132,16 @@
                 <input id="total1" name="total1" class="form-control" readonly="true" type="text" >
                 </div>
             </div>
+
+            <input id="pro_name" name="pro_name" type="text" class="form-control" readonly="true" type="text" placeholder="Rs">
+
             </div>
             <div class="col-xl-2 ">
                 <button type="submit" id="sumbitBtn1" name="sumbitBtn1" class="btn btn-primary">Add to Cart</button>
             </div>
         </div>
     </div>
-</form> 
+</form>  -->
    
 <!-- Content Row -->
             </div>
@@ -158,24 +172,32 @@
                 }
 
             });
-            // var $dropdown = $('#itemName');
-            // $dropdown.empty();
-            // $("#price").val('');
-            // $.ajax({
-            //     url: 'http://localhost/krishvill/index.php/cart/getItems/' + e.target.value,
-            //     method : 'get',
-            //     datatype : 'json',
-            //     success : function(response){
-            //         console.log(JSON.parse(response));
-            //     //     const itemList = JSON.parse(response);
-            //     //     $dropdown.append('<option>Please Select Items</option>');
-            //     //     itemList.map(function(selectCategory){
-            //     //         $dropdown.append($("<option />").val(selectCategory.itemCode).text(selectCategory.itemName));
-            //     //     })
-            //     // }
-            });
+        });
+    })
 
-        })
+
+    $("#itemName").change(function(e){
+            // console.log($e.target.value);
+            var $dropdown = $('#pro_name');
+            $dropdown.empty();
+            $.ajax({
+                url: '<?php echo base_url(); ?>index.php/cart/getItemName/' + e.target.value,
+                method : 'get',
+                datatype : 'json',
+                success : function(response){
+                    const item = JSON.parse(response);
+                    // console.log(item,"ssssss");
+                    item?.map(function(selectItem,index){
+                        // console.log(item,"ssssss");
+                        $("#pro_name").val(selectItem.name);
+                    })
+                }
+            });
+        });
+
+    
+
+
 
 
 

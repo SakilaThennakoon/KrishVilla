@@ -16,7 +16,7 @@ class Login extends CI_Controller {
 	{	
 		
 		$this->load->view('header');
-		$this->load->view('login/register_copy');
+		$this->load->view('login/register');
         $this->load->view('footer');
 		
 	}
@@ -64,7 +64,11 @@ class Login extends CI_Controller {
 						$data = array(
 							'users_role' => $r[0]['user_role'],
 							'logged_user' => $r[0]['firstname'],
-							'farm_name' => $r[0]['farm_name']);
+							'user_id' => $r[0]['id'],
+							'last_name' => $r[0]['lastname'],
+							'Email' => $r[0]['email'],
+							'Address' => $r[0]['address'],
+							'Mobile' => $r[0]['phone']);
 			
 						$this->load->Library('session');
 						$this->session->set_userdata($data);

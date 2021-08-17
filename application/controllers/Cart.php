@@ -54,11 +54,21 @@ class Cart extends CI_Controller {
 		
 	}
 
+	public function getItemName($id)
+	{
+		$this->load->model('Purchase_model');
+		$NameList = $this->Purchase_model->get_name_item($id);
+		echo json_encode($NameList);
+		
+	}
+
     public function saveItems()
 	{
 		$this->load->model('Purchase_model');
 		$item = $this->Purchase_model->save_items($this->input->post());
 		echo json_encode($item);
+
+
 		// var_dump ($this->input->post());
 	}
 

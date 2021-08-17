@@ -20,8 +20,33 @@
           <input id="areaofFarm" name="areaofFarm" type="number" class="form-control">
         </div>
         <div class="col-md-3">
-          <label for="inputCity" class="form-label">City</label>
-          <input id="inputCity" name="inputCity" type="text" class="form-control" >
+          <label  for="inputCity" class="form-label">Near by City  </label>
+
+        <select id="inputCity" name="inputCity">
+        <option value="Colombo">Colombo</option>
+        <option value="Gampaha">Gampaha</option>
+        <option value="Nugegoda">Nugegoda</option>
+        <option value="Maharagama">Maharagama</option>
+        <option value="Pannipitiya">Pannipitiya</option>
+        <option value="Kiribathgoda">Kiribathgoda</option>
+        <option value="Kaduwela">Kaduwela</option>
+        <option value="Lindula">Lindula</option>
+        <option value="Talawakale">Talawakale</option>
+        <option value="Hatton">Hatton</option>
+        <option value="Watawala">Watawala</option>
+        <option value="Ginigathhena">Ginigathhena</option>
+        <option value="Nuwaraeliya">Nuwaraeliya</option>
+        <option value="Bandarawela">Bandarawela</option>
+        <option value="Kaluthara">Kaluthara</option>
+        <option value="Kaluthara">Bandaragama</option>
+        <option value="Horana">Horana</option>
+        <option value="Galle">Galle</option>
+        <option value="Labuduwa">Labuduwa</option>
+        <option value="Hikkaduwa">Hikkaduwa</option>
+        </select>
+
+
+          <!-- <input id="inputCity" name="inputCity" type="text" class="form-control" > -->
         </div>
         <div class="col-md-4">
           <label for="inputCrops" class="form-label">List of crop the a farm wish to grow and sell</label>
@@ -37,7 +62,7 @@
           <input id="userRole" name="userRole" type="hidden" value="farmer">
         </div>
         <div class="col-md-3">
-          <label for="exampleFormControlFile1">Example file input</label>
+          <label for="exampleFormControlFile1">Upload farm pictures</label>
           <input type="file" class="form-control-file" id="upload" name="upload">
       </div>
         <div class="col-md-5">

@@ -12,7 +12,7 @@
                                             <th>Dish Code</th>
                                             <th>Quantity</th>
                                             <th>Total (Rs)</th>
-                                            
+                                            <th>Category Code</th>
                                             
                                         </tr>
                                     </thead>
@@ -22,13 +22,16 @@
                                         <?php
                                         
                                         foreach($buy as $itemsAll){ ?>
+                                         <?php   $image = $itemsAll['profile_pic'];?>
                                             <tr>
+                                            <td><img src="<?php echo base_url().'uploads/'.$image?>" /></td>
                                             <?php   echo "<td>" .$itemsAll['item_name']. "</td>";
-                                                    echo "<td>" .$itemsAll['qty']. "</td>";
-                                                    echo "<td>" .$itemsAll['amount']. "</td>";
+                                            echo "<td>" .$itemsAll['qty']. "</td>";
+                                            echo "<td>" .$itemsAll['amount']. "</td>";
+                                            echo "<td>" .$itemsAll['product_id']. "</td>";
                                             // echo '<td> <button type="button" id="edit" name="edit" class="btn btn-info">Edit</button>  <button type="button" value="'.$itemsAll['id'].'" id="delete" name="delete'.$itemsAll['id'].'" class="btn btn-danger">X</button></td>';
                                            
-                                                    echo "</tr>";
+                                            echo "</tr>";
                                         }
                                                                     
                                         ?>
