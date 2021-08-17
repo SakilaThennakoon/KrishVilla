@@ -5,7 +5,7 @@ class Menu_model extends CI_Model
     {
 
     public function get_all_items() {
-        $result = $this->db->get('dishesh')->result_array();
+        $result = $this->db->get('products')->result_array();
         // var_dump($result);
         return $result;
     }
@@ -13,24 +13,27 @@ class Menu_model extends CI_Model
 
         public function homeMenu()        
     {
-        $result = $this->db->get('dishesh')->result_array();
+        $result = $this->db->get('products')->result_array();
         return $result;
     }
 
 
 	public function get_vegitables()
 	{
-		
-		$result = $this->db->get('dishesh')->result_array();
-        return $result;
+
+		$query = $this->db->get_where('products', array('category_id' => 4));
+        return $query->result_array(); 
+		// $result = $this->db->get('products')->result_array();
+        // return $result;
 		
 	}
 
 	public function get_fruits()
 	{
-		
-		$result = $this->db->get('dishesh')->result_array();
-        return $result;
+		$query = $this->db->get_where('products', array('category_id' => 5));
+        return $query->result_array(); 
+		// $result = $this->db->get('products')->result_array();
+        // return $result;
 		
 	}
 

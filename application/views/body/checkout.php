@@ -25,10 +25,10 @@
                                          <?php   $image = $itemsAll['profile_pic'];?>
                                             <tr>
                                             <td><img src="<?php echo base_url().'uploads/'.$image?>" /></td>
-                                            <?php   echo "<td>" .$itemsAll['d_name']. "</td>";
-                                            echo "<td>" .$itemsAll['quantity']. "</td>";
-                                            echo "<td>" .$itemsAll['price']. "</td>";
-                                            echo "<td>" .$itemsAll['d_id']. "</td>";
+                                            <?php   echo "<td>" .$itemsAll['item_name']. "</td>";
+                                            echo "<td>" .$itemsAll['qty']. "</td>";
+                                            echo "<td>" .$itemsAll['amount']. "</td>";
+                                            echo "<td>" .$itemsAll['product_id']. "</td>";
                                             // echo '<td> <button type="button" id="edit" name="edit" class="btn btn-info">Edit</button>  <button type="button" value="'.$itemsAll['id'].'" id="delete" name="delete'.$itemsAll['id'].'" class="btn btn-danger">X</button></td>';
                                            
                                             echo "</tr>";

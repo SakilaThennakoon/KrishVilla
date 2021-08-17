@@ -1,3 +1,4 @@
+
 <div class="container" style="padding-top: 20px;">
     <h4  style="text-align: center; color: #82ae46;">Select Vegitables </h4>
 </div>
@@ -13,7 +14,7 @@
                             <?php
                 
                             foreach ($categoryList as $category){
-                                $id = $category['r_id'];
+                                $id = $category['id'];
                                 echo "done";
                                 echo "<option value='$id'  onClick='getItems($id)'>".$category['name']."</option>";
                             } ?>
@@ -54,7 +55,7 @@
             </div>
             </div>
             <div class="col-xl-2 ">
-                <button type="button" id="sumbitBtn" name="sumbitBtn" class="btn btn-primary">Sumbit</button>
+                <button type="button" id="sumbitBtn" name="sumbitBtn" class="btn btn-primary">Add to Cart</button>
             </div>
         </div>
     </div>
@@ -68,7 +69,7 @@
 </div>
 
 
-<form class="align-items-center" style="padding-top: 50px;" id="itemForm1" name="itemForm1" method="post" action="<?php echo base_url(); ?>index.php/cart/checkout_new">
+<form class="align-items-center" style="padding-top: 50px;" id="itemForm1" name="itemForm1" >
     <div class="container-fluid padding dish-card">
         <div class="row">
             <div class="col-xl-3 ">
@@ -79,7 +80,7 @@
                             <?php
                 
                             foreach ($categoryList as $category){
-                                $id = $category['r_id'];
+                                $id = $category['id'];
                                 $name = $category['name'];
 
                                 echo "<option value='$id'  onClick='getItems($id)'>".$category['name']."</option>";
@@ -122,7 +123,7 @@
             </div>
             </div>
             <div class="col-xl-2 ">
-                <button type="submit" id="sumbitBtn1" name="sumbitBtn1" class="btn btn-primary">Sumbit</button>
+                <button type="submit" id="sumbitBtn1" name="sumbitBtn1" class="btn btn-primary">Add to Cart</button>
             </div>
         </div>
     </div>
@@ -152,7 +153,7 @@
                     // var $dropdown = $("#itemName");
                     $dropdown.append('<option>Please Select Items</option>');
                     itemList.map(function(selectCategory){
-                        $dropdown.append($("<option />").val(selectCategory.d_id).text(selectCategory.name));
+                        $dropdown.append($("<option />").val(selectCategory.id).text(selectCategory.name));
                     });
                 }
 
@@ -246,7 +247,7 @@ $(document).ready(function(){
                     // var $dropdown = $("#itemName");
                     $dropdown.append('<option>Please Select Items</option>');
                     itemList.map(function(selectCategory){
-                        $dropdown.append($("<option />").val(selectCategory.d_id).text(selectCategory.name));
+                        $dropdown.append($("<option />").val(selectCategory.id).text(selectCategory.name));
                     });
                 }
 
@@ -288,7 +289,19 @@ $(document).ready(function(){
             $('#total1').val(parseFloat(total).toFixed(2));
         })
 
-  
+
+        $('#sumbitBtn1').click(function(e){
+            $.ajax({
+                url: '<?php echo base_url(); ?>index.php/cart/saveItems/' + e.target.value,
+                method : 'post',
+                data: $('#itemForm1').serialize(),
+                datatype : 'json',
+                success : function(response){
+                    const saveItemStatus = JSON.parse(response);
+                    console.log(saveItemStatus);
+                }
+            });
+        });
   
 
 </script>

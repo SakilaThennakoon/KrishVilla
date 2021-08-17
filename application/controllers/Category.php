@@ -99,6 +99,6 @@ class Category extends CI_Controller {
         // $dishesh = $this->Menu_model->getMenu();
 
         var_dump($this->router->fetch_class());
-        var_dump($_POST);
+        var_dump($this->config->item('hidden'));
     }
 }

@@ -42,18 +42,18 @@
 <div class="container-fluid padding dish-card">
     <div class="row">
         <?php if(!empty($fruit)) { ?>
-        <?php foreach($fruit as $dish) { ?>
+        <?php foreach($fruit as $items) { ?>
         <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
             <div class="card mb-4 shadow-sm">
-                <?php $image = $dish['img'];?>
-                <img class="card-img-top" src="<?php echo base_url().'public/uploads/dishesh/thumb/'.$image; ?>">
+                <?php $image = $items['image'];?>
+                <img width="260" height="260" class="card-img-top" src="<?php echo base_url().'uploads/'.$image; ?>">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
-                        <h4 class="card-title"><?php echo $dish['name']; ?></h4>
-                        <h4 class="text-muted"><b>$<?php echo $dish['price']; ?></b></h4>
+                        <h4 class="card-title"><?php echo $items['name']; ?></h4>
+                        <h4 class="text-muted"><b>Rs. <?php echo $items['price']; ?></b></h4>
                     </div>
-                    <p class="card-text"><?php echo $dish['about']; ?></p>
-                    <a href="<?php echo base_url().'Category/addToCart/'.$dish['d_id']; ?>" class="btn btn-primary"><i
+                    <p class="card-text"><?php echo $items['description']; ?></p>
+                    <a href="<?php echo base_url().'Category/addToCart/'.$items['id']; ?>" class="btn btn-primary"><i
                             class="fas fa-cart-plus"></i> Add to
                         Cart</a>
                 </div>

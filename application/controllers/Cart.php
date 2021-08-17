@@ -88,4 +88,19 @@ class Cart extends CI_Controller {
 		
 	
 	}
+
+	public function teacher(){ 
+
+		$this->load->model('Purchase_model');
+		$PriceList = $this->Purchase_model->scoreboard();
+
+
+
+		// $this->load->model('Purchase_model');
+		// // $id = $this->input->post('name'); 
+		
+		// $data = $this->Purchase_model->scoreboard($id);
+		var_dump($PriceList);
+		// $this->load->view('teacher/teacher', $data);
+	  }
 }

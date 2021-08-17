@@ -63,7 +63,7 @@ class Login extends CI_Controller {
 					if($r){
 						$data = array(
 							'users_role' => $r[0]['user_role'],
-							'logged_user' => $r[0]['first_name'],
+							'logged_user' => $r[0]['firstname'],
 							'farm_name' => $r[0]['farm_name']);
 			
 						$this->load->Library('session');
@@ -71,8 +71,14 @@ class Login extends CI_Controller {
 						// var_dump($this->session);
 								if($r[0]['user_role'] == 'farmer'){
 									redirect('farmer/index');
+									
 								}else{
-									redirect('home/index');
+									if($r[0]['user_role'] == 'admin'){
+										redirect('admin/index');
+
+									}else{
+											redirect('home/index');
+										}
 									}
 					}else{
 						redirect('login/index', 'refresh');
@@ -82,6 +88,7 @@ class Login extends CI_Controller {
 
 	public function imageUpload()
 		{
+			var_dump($_POST);
 			$config['upload_path']          = './uploads/';
 			$config['allowed_types']        = 'gif|jpg|png';
 			// $config['max_size']             = 100;
@@ -90,7 +97,7 @@ class Login extends CI_Controller {
 
 			$this->load->library('upload', $config);
 
-			if ( ! $this->upload->do_upload('upload')) // this the button id
+			if ( ! $this->upload->do_upload('uploadPic')) // this the button id
 			{
 					$error = array('error' => $this->upload->display_errors());
 					echo "error";
@@ -100,12 +107,13 @@ class Login extends CI_Controller {
 			{
 					$data = array('upload_data' => $this->upload->data());
 					$data = array(
-						"profile_pic" => $data['upload_data']['file_name'],
+						"image" => $data['upload_data']['file_name'],
 					 );
-					 $this->db->where('d_id',2);
-					 $r = $this->db->update('user_orders',$data);
+					 $this->db->where('id',0);
+					 $r = $this->db->update('products',$data);
 					echo 'done';
-					var_dump($this->upload->data('file_name'));
+					
+					// var_dump($this->upload->data('file_name'));
 					// $this->load->view('upload_success', $data);
 			}
 		}
@@ -120,7 +128,22 @@ class Login extends CI_Controller {
 		$this->session->sess_destroy();
 			redirect('login/index');
 		}
-	}
+
+
+
+// ----------------------------------- testing------------------------------------------------------------------
+
+	public function test()
+		{    
+			var_dump($_POST);
+			// $this->load->model('User_model');
+			// $r = $this->User_model->insert_farmer($this->input->post());
+			
+			// redirect('farmer/index');
+		}
+
+
+}
 
 
 

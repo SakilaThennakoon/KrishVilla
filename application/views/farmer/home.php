@@ -1,35 +1,3 @@
-<section id="home-section" class="hero">
-		  <div class="home-slider owl-carousel">
-	      <div class="slider-item" style="background-image: url(<?php echo base_url(); ?>source/images/bg1.jpg);">
-	      	<div class="overlay"></div>
-	        <div class="container">
-	          <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
-
-	            <div class="col-md-12 ftco-animate text-center">
-	              <h1 class="mb-2">We serve Fresh Vegestables &amp; Fruits</h1>
-	              <h2 class="subheading mb-4">We deliver fresh & organic vegetables &amp; fruits</h2>
-	              <p><a href="#" class="btn btn-primary">View Details</a></p>
-	            </div>
-	          </div>
-	        </div>
-	      </div>
-
-	      <div class="slider-item" style="background-image: url(<?php echo base_url(); ?>source/images/bg2.jpg);">
-	      	<div class="overlay"></div>
-	        <div class="container">
-	          <div class="row slider-text justify-content-center align-items-center" data-scrollax-parent="true">
-
-	            <div class="col-sm-12 ftco-animate text-center">
-	              <h1 class="mb-2">100% Organic Foods</h1>
-	              <h2 class="subheading mb-4">We deliver fresh & organic vegetables &amp; fruits</h2>
-	              <p><a href="#" class="btn btn-primary">View Details</a></p>
-	            </div>
-	          </div>
-	        </div>
-	      </div>
-	    </div>
-    </section>
-
 
 <section>
 <div class="container-fluid padding">
@@ -78,17 +46,13 @@
         <?php foreach($homeList as $items) { ?>
         <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
             <div class="card mb-4 shadow-sm">
-                <?php $image = $items['img'];?>
-                <img class="card-img-top" src="<?php echo base_url().'public/uploads/dishesh/thumb/'.$image; ?>">
+                <?php $image = $items['image'];?>
+                <img width="260" height="260" class="card-img-top" src="<?php echo base_url().'uploads/'.$image; ?>">
                 <div class="card-body">
                     <div class="d-flex justify-content-between align-items-center">
-                        <h5 class="card-title"><?php echo $items['name']; ?></h5>
-                        <h4 class="text-muted"><b>$<?php echo $items['price']; ?></b></h4>
+                        <h4 class="card-title"><?php echo $items['name']; ?></h4>
+                        <h6 class="text-muted"><b>1 Kg - Rs. <?php echo $items['price']; ?></b></h6>
                     </div>
-                    <p class="card-text"><?php echo $items['about']; ?></p>
-                    <a href="<?php echo base_url().'Dish/addToCart/'.$items['d_id']; ?>" class="btn btn-primary"><i
-                            class="fas fa-cart-plus"></i> Add to
-                        Cart</a>
                 </div>
             </div>
         </div>

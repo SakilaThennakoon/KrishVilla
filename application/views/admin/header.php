@@ -66,31 +66,26 @@
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="<?php echo base_url(); ?>index.php/home/index">Krish Villa <br> Organic</a>
+	      <a class="navbar-brand" href="<?php echo base_url(); ?>index.php/home/index">Krish Villa <br> Admin Panel</a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item active"><a href="<?php echo base_url(); ?>index.php/farmer/index" class="nav-link">Home</a></li>
-	          <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
-              <div class="dropdown-menu" aria-labelledby="dropdown04">
-              	<a class="dropdown-item" href="<?php echo base_url(); ?>index.php/farmer/vegitables">Vegetables</a>
-              	<a class="dropdown-item" href="<?php echo base_url(); ?>index.php/farmer/fruits">Fruits</a>
-		  </div>
-            </li>
-			
-        <li class="nav-item"><a href="<?php echo base_url(); ?>index.php/farmer/about" class="nav-link">About Us</a></li>
-        <li class="nav-item"><a href="<?php echo base_url(); ?>index.php/farmer/contact" class="nav-link">Contact Us</a></li>
-        
-        <li class="nav-item"><a href="<?php echo base_url(); ?>index.php/login/index" class="nav-link">
-            <?php if(isset($_SESSION['logged_user'])){
-              echo ($_SESSION['logged_user']);
-              }else{
-                echo "Login";
-              }?></a></li>
+	          <li class="nav-item active"><a href="<?php echo base_url(); ?>index.php/admin/index" class="nav-link">Products</a></li>
+
+			<li class="nav-item"><a href="<?php echo base_url(); ?>index.php/admin/category" class="nav-link">Add products</a></li>
+        <li class="nav-item"><a href="<?php echo base_url(); ?>index.php/home/farm" class="nav-link">Add farms</a></li>
+        <li class="nav-item"><a href="<?php echo base_url(); ?>index.php/home/abou" class="nav-link">About Us</a></li>
+        <li class="nav-item"><a href="<?php echo base_url(); ?>index.php/home/contac" class="nav-link">Contact Us</a></li>
+        <li class="nav-item cta cta-colored"><a href="<?php echo base_url(); ?>index.php/cart/checkout" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
+		<li class="nav-item"><a href="<?php echo base_url(); ?>index.php/login/index" class="nav-link">
+				<?php if(isset($_SESSION['logged_user'])){
+					echo ($_SESSION['logged_user']);
+					}else{
+						echo "Login";
+					}?></a></li>
 
 		<li class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown" href="#" id="userDropdown" role="button"
