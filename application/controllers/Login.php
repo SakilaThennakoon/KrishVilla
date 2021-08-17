@@ -16,7 +16,7 @@ class Login extends CI_Controller {
 	{	
 		
 		$this->load->view('header');
-		$this->load->view('login/register');
+		$this->load->view('login/register_copy');
         $this->load->view('footer');
 		
 	}
@@ -36,6 +36,7 @@ class Login extends CI_Controller {
 		$this->load->model('User_model');
 		$r = $this->User_model->insert_user($this->input->post());
 
+		redirect('home/index');
 		// if($r){
 		// 	echo json_encode(true);
 		// }else{
@@ -46,9 +47,11 @@ class Login extends CI_Controller {
 
 	public function save_farmer()
     {    
+
 		$this->load->model('User_model');
 		$r = $this->User_model->insert_farmer($this->input->post());
 		
+		redirect('farmer/index');
 	}
 
 	public function authenticate() 
@@ -67,9 +70,9 @@ class Login extends CI_Controller {
 						$this->session->set_userdata($data);
 						// var_dump($this->session);
 								if($r[0]['user_role'] == 'farmer'){
-									echo 'farmer';
+									redirect('farmer/index');
 								}else{
-									redirect('home/index', 'refresh');
+									redirect('home/index');
 									}
 					}else{
 						redirect('login/index', 'refresh');
@@ -77,30 +80,39 @@ class Login extends CI_Controller {
 
 	}
 
-		// $this->load->model('User_model');
-		// $r = $this->User_model->authenticateUser($this->input->post());
-		// // var_dump($r);
+	public function imageUpload()
+		{
+			$config['upload_path']          = './uploads/';
+			$config['allowed_types']        = 'gif|jpg|png';
+			// $config['max_size']             = 100;
+			// $config['max_width']            = 1024;
+			// $config['max_height']           = 768;
 
-		// if($r){
-		// 	$data = array(
-		// 		'users_role' => $r[0]['user_role'],
-		// 		'logged_user' => $r[0]['first_name'],
-		// 		'farm_name' => $r[0]['farm_name']
-		// 	);
+			$this->load->library('upload', $config);
 
-		// 	$this->load->Library('session');
-		// 	$this->session->set_userdata($data);
-		// 	// var_dump($this->session);
+			if ( ! $this->upload->do_upload('upload')) // this the button id
+			{
+					$error = array('error' => $this->upload->display_errors());
+					echo "error";
+					var_dump($error);
+			}
+			else
+			{
+					$data = array('upload_data' => $this->upload->data());
+					$data = array(
+						"profile_pic" => $data['upload_data']['file_name'],
+					 );
+					 $this->db->where('d_id',2);
+					 $r = $this->db->update('user_orders',$data);
+					echo 'done';
+					var_dump($this->upload->data('file_name'));
+					// $this->load->view('upload_success', $data);
+			}
+		}
+	
+	
 
-		// 	if($r[0]['user_role'] == 'farmer'){
-		// 		echo 'farmer';
-		// 	}else{
-		// 		redirect('home/index', 'refresh');
-		// 		}
-		// }else{
 
-		// 	redirect('login/index', 'refresh');
-		// }
 
 	public function logout() {
 			// echo 'done';

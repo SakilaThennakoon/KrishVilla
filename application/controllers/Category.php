@@ -3,15 +3,15 @@ defined('BASEPATH') OR exit ('No direct script access allowed');
 
 class Category extends CI_Controller {
 
-    // function __construct(){
-    //     parent::__construct();
-    //     //Load cart libraray
-    //     $this->load->library('cart');
+    function __construct(){
+        parent::__construct();
+            // Load cart libraray
+        $this->load->library('cart');}
 
     public function index() {
 
         $this->load->model('Menu_model');
-        $dishesh = $this->Menu_model->getMenu();
+        $dishesh = $this->Menu_model->get_all_items();
         // var_dump($dishesh);
     }
 
@@ -58,15 +58,29 @@ class Category extends CI_Controller {
 		
 	}
 
-    public function addToCart($id) 
+
+// not used below functions ------------------------------------------
+
+    public function addToCart() 
     {   
         if(!isset($_SESSION['logged_user'])){
 			redirect('login/index');
 		}
         $this->load->model('Menu_model');
-        $dishesh = $this->Menu_model->add_cart($id);
+        $dishesh = $this->Menu_model->add_cart();
+        var_dump($dishesh);
+
+        // $data =array(
+		// 	"addCart" => $addCart
+		// );
+
+        
+        // $this->load->view('header');
+		// $this->load->view('body/newCart',$data);
+		// $this->load->view('footer');
+        
         $data = array (
-            'id'    => $dishesh['d_id'],
+            'd_id'    => $dishesh['d_id'],
             'r_id'  => $dishesh['r_id'],
             'qty'   =>1,
             'price' => $dishesh['price'],
@@ -74,6 +88,17 @@ class Category extends CI_Controller {
             'image' => $dishesh['img']
         );
         $this->cart->insert($data);
-        redirect(base_url(). 'cart/index');
+        // redirect(base_url(). 'cart/index');
+            
+        
+    }
+
+    public function addCart() {
+
+        // $this->load->model('Menu_model');
+        // $dishesh = $this->Menu_model->getMenu();
+
+        var_dump($this->router->fetch_class());
+        var_dump($_POST);
     }
 }

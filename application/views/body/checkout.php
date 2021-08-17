@@ -21,9 +21,11 @@
 
                                         <?php
                                         
-                                        foreach($buy as $itemsAll){
-                                            echo "<tr>";
-                                            echo "<td>" .$itemsAll['d_name']. "</td>";
+                                        foreach($buy as $itemsAll){ ?>
+                                         <?php   $image = $itemsAll['profile_pic'];?>
+                                            <tr>
+                                            <td><img src="<?php echo base_url().'uploads/'.$image?>" /></td>
+                                            <?php   echo "<td>" .$itemsAll['d_name']. "</td>";
                                             echo "<td>" .$itemsAll['quantity']. "</td>";
                                             echo "<td>" .$itemsAll['price']. "</td>";
                                             echo "<td>" .$itemsAll['d_id']. "</td>";
@@ -69,20 +71,8 @@
                     }
                 }
             });
-            })    
-            });
-
-
-
-
-
-
-
-
-
-
-
-
+        })    
+    });
 
 </script> 
 

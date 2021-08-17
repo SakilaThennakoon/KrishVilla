@@ -34,6 +34,26 @@
           </div>
         </div>
       </div>
+
+      <address> Address: Sukhna Lake, Sector 1, Chandigarh</address>
+</div>
+<div id="map"></div>
+    <script>
+      function initMap() {
+        var demomap = {lat: 30.7421379, lng: 76.8187557};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 14,
+          center: demomap
+         });
+        var marker = new google.maps.Marker({
+          position: demomap,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfwo7C7-WLO8GU-bc6WmvqmsF8FKipzuE&callback=initMap">
+    </script>
      
       <div class="row block-9">
         <div class="col-md-6 order-md-last d-flex">

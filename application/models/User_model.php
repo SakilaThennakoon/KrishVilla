@@ -20,11 +20,12 @@ class User_model extends CI_Model {
 
             $result = $this->db->insert('new_users', $dataset);
                 return $result;
+                
         }
 
         public function insert_farmer($data)
         {
-            // var_dump($data);
+           
             $dataset = array(
                 "farm_name" => $data["farmName"],
                 "first_name" => $data["farmerName"],
@@ -51,6 +52,13 @@ class User_model extends CI_Model {
                'password' => $data['password'])
             );
            return $query->result_array();
+           
+        }
+
+        function upload_image($data)
+        {
+            $imgdata = file_get_contents($data['full_path']);
+            var_dump($imgdata);
            
         }
 }

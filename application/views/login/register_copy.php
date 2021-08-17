@@ -1,6 +1,6 @@
 <div class="container" style="padding-top: 20px;">
-    <h3  style="text-align: center; color: #82ae46;">Customer Register</h3>  
-    <form id="farmerRegister" name="farmerRegister" method="post" action="<?php echo base_url(); ?>index.php/login/save_user"
+    <h3  style="text-align: center; color: #82ae46;">Cust Register</h3>  
+    <form id="farmerRegister" name="farmerRegister" method="post" action="<?php echo base_url(); ?>index.php/login/save_user" 
       class="row justify-content-center align-items-center">
         
         <div class="col-5">
@@ -37,8 +37,8 @@
           <input id="reconfirmpassWord" name="reconfirmpassWord" type="password" class="form-control">
         </div>
         <div class="col-md-10">
-          <label for="exampleFormControlFile1">Example file input</label>
-          <input id="upload" name="upload" type="file" class="form-control-file" id="exampleFormControlFile1">
+          <label for="exampleFormControlFile1">Example file</label>
+          <input id="#" name="#" type="file" class="form-control-file" id="exampleFormControlFile1">
       </div>
         <div class="col-10">
           <div class="form-check">
@@ -47,9 +47,85 @@
               Check me out
             </label>
           </div>
-        </div>
+          <div>
+          <?php echo form_open_multipart('login/save_farmer');?>
+            <input type="file" name="upload" size="20" />
+            <input id="submit" name="submit" type="submit" value="upload" />
+
+            </form>
+          </div>
+
         <div class="col-10">
           <button id="submit" name="submit" type="submit" class="btn btn-primary">Register</button>
         </div>
+        
       </form>
 </div>
+
+<?php echo form_open_multipart('login/imageUpload');?>
+<input type="file" name="upload" size="20" />
+<input type="submit" value="upload" />
+
+</form>
+
+<!-- <script>
+
+$("#submit").click(function(){
+          alert('done');
+          
+          var fd = new FormData();
+        var files = $('#upload')[0].files;
+        
+        // Check file selected or not
+          if(files.length > 0 ){
+           fd.append('file',files[0]);
+          }
+           
+
+          //  const data = $("#farmerRegister").serialize();
+
+          //  dataset = {
+          //    'formData' : $("#farmerRegister").serialize(),
+          //    'fileUpload' : files
+          //  }
+
+          //  console.log(files);
+           
+
+           $.ajax({
+            url: '<php echo base_url(); ?>index.php/login/save_user',
+            method: 'post',
+            data: fd,
+            processData: false,
+            dataType: 'json',
+
+            success:function(response){
+              const saveitemStatus = JSON.parse(response);
+                   console.log(saveitemStatus);
+            }
+        });
+});
+  
+   </script> -->
+
+<!-- <script> -->
+
+<!-- $("#submit").click(function(){
+        alert('done');
+        var fd = new FormData();
+        var files = $('#upload')[0].files;
+        console.log(files);
+           $.ajax({
+               url: '< echo base_url(); ?>index.php/login/save_user',
+               method: 'post',
+               data: $("#farmerRegister").serialize(),
+               dataType: 'json',
+               success:function(response){
+                   const saveitemStatus = JSON.parse(response);
+                   console.log(saveitemStatus);
+               }
+           });
+       });
+   }) -->
+
+   <!-- </script> -->

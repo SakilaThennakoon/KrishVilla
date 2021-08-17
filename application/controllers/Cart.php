@@ -73,8 +73,6 @@ class Cart extends CI_Controller {
 		$buy = $this->Purchase_model->pay_total();
 
 		$data =array(
-			"currentController" =>$this->router->fetch_class(),
-			"currentMethod" =>$this->router->fetch_class(),
 			"buy" => $buy
 		);
 
@@ -82,4 +80,12 @@ class Cart extends CI_Controller {
         $this->load->view('body/checkout',$data);
         $this->load->view('footer');
     }
+
+	public function checkout_new() 
+	{
+		$this->load->model('Purchase_model');
+		$r = $this->Purchase_model->pay_total_new($this->input->post());
+		
+	
+	}
 }

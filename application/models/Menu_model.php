@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit ('No direct script access allowed');
 class Menu_model extends CI_Model 
     {
 
-    public function getMenu() {
+    public function get_all_items() {
         $result = $this->db->get('dishesh')->result_array();
         // var_dump($result);
         return $result;
@@ -34,15 +34,18 @@ class Menu_model extends CI_Model
 		
 	}
 
-    public function add_cart($id)
+
+// not used below functions ------------------------------------------
+
+    public function add_cart()
 	{
 		// $this->db->where('d_id', $id);
 		// $result = $this->db->get('dishesh')->row_array();
         // return $result;
 
-        $this->db->where('d_id', $id);
-        $dish = $this->db->get('dishesh')->row_array();
-        return $dish;
+        
+        $dish = $this->db->get('dishesh',array('d_id'));
+        return $dish->result_array();
 
         // $query = $this->db->get_where('dishesh', array('about' =>$id));
         // return $query->result_array();

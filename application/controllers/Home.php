@@ -22,9 +22,6 @@ class Home extends CI_Controller {
 
 	public function about()
 	{	
-		if(!isset($_SESSION['logged_user'])){
-			redirect('login/index');
-		}
 		$this->load->view('header');
 		$this->load->view('body/about');
 		$this->load->view('footer');
