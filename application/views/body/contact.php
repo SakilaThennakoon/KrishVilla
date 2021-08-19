@@ -35,26 +35,18 @@
         </div>
       </div>
 
-      <address> Address: Sukhna Lake, Sector 1, Chandigarh</address>
-</div>
-<div id="map"></div>
-    <script>
-      function initMap() {
-        var demomap = {lat: 30.7421379, lng: 76.8187557};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 14,
-          center: demomap
-         });
-        var marker = new google.maps.Marker({
-          position: demomap,
-          map: map
-        });
-      }
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfwo7C7-WLO8GU-bc6WmvqmsF8FKipzuE&callback=initMap">
-    </script>
-     
+
+
+
+<!-- 
+    </div>
+    <div class="col-md-6 d-flex">
+		  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15844.436829733491!2d79.95317848466958!3d6.877517723838964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae250e01223eeb7%3A0x29145e44e2add0bd!2sHokandara!5e0!3m2!1sen!2slk!4v1629368957313!5m2!1sen!2slk"
+         style="border: 1px;" allowfullscreen="" loading="lazy" width="100%" height="100%"></iframe>
+        </div>
+      </div>
+    </div>
+      -->
       <div class="row block-9">
         <div class="col-md-6 order-md-last d-flex">
           <form action="#" class="bg-white p-5 contact-form">
@@ -75,6 +67,14 @@
             </div>
           </form>
         </div>
+
+
+        <div class="col-md-6 d-flex">
+		  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15844.436829733491!2d79.95317848466958!3d6.877517723838964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae250e01223eeb7%3A0x29145e44e2add0bd!2sHokandara!5e0!3m2!1sen!2slk!4v1629368957313!5m2!1sen!2slk"
+         style="border: 1px;" allowfullscreen="" loading="lazy" width="100%" height="100%"></iframe>
+        </div>
+      </div>
+    </div>
 
         <div class="col-md-6 d-flex">
           <div id="map" class="bg-white"></div>
