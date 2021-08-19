@@ -2,7 +2,6 @@
     <h3  style="text-align: center; color: #82ae46;">Cust Register</h3>  
 
 
-    <form action="<?php echo base_url(); ?>index.php/login/test" method="post" enctype="multipart/form-data">
    
         <div class="col-md-4">
           <label for="inputeMail" class="form-label">Email</label>
@@ -19,21 +18,24 @@
           </div>
           <div>
          
-            <!-- <input type="file" name="upload" size="20" />
-            <input id="submit" name="submit" type="submit" value="upload" /> -->
+          <?php echo form_open_multipart('admin/imageUpload');?>
 
-            <!-- </form> -->
-          </div>
+          <input type="file" id="uploadPic" name="uploadPic" size="20" />
+        <input id="passWord" name="passWord" type="hidden" value="testone" class="form-control">
 
-        <!-- <div class="col-10">
-          <button id="submit" name="submit" type="submit" class="btn btn-primary">Register</button>
-        </div> -->
+<br /><br />
+
+        <input type="submit" value="upload" />
+
+</form>
+
+<!-- 
         <input type="file" id="uploadPic" name="uploadPic" size="20" />
         <input id="passWord" name="passWord" type="hidden" value="testone" class="form-control">
         
         <input type="submit" value="upload" />
 
-        </form>
+        </form> -->
 
 </div>
 

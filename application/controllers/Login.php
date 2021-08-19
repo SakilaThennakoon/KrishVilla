@@ -36,7 +36,7 @@ class Login extends CI_Controller {
 		$this->load->model('User_model');
 		$r = $this->User_model->insert_user($this->input->post());
 
-		redirect('home/index');
+		redirect('login/index');
 		// if($r){
 		// 	echo json_encode(true);
 		// }else{
@@ -90,6 +90,17 @@ class Login extends CI_Controller {
 
 	}
 
+			public function logout() 
+			{
+				// echo 'done';
+				// $this->session->unset_userdata('logged_user');
+			$this->session->sess_destroy();
+				redirect('login/index');
+			}
+
+
+// ------------------------------------------------------ testing not completed ---------------------------------------------------------------
+
 	public function imageUpload()
 		{
 			var_dump($_POST);
@@ -120,18 +131,12 @@ class Login extends CI_Controller {
 					// var_dump($this->upload->data('file_name'));
 					// $this->load->view('upload_success', $data);
 			}
-		}
+}
 	
 	
 
 
 
-	public function logout() {
-			// echo 'done';
-			// $this->session->unset_userdata('logged_user');
-		$this->session->sess_destroy();
-			redirect('login/index');
-		}
 
 
 

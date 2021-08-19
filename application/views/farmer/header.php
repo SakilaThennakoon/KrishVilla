@@ -74,18 +74,12 @@
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
 	          <li class="nav-item active"><a href="<?php echo base_url(); ?>index.php/farmer/index" class="nav-link">Home</a></li>
-	          <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
-              <div class="dropdown-menu" aria-labelledby="dropdown04">
-              	<a class="dropdown-item" href="<?php echo base_url(); ?>index.php/farmer/vegitables">Vegetables</a>
-              	<a class="dropdown-item" href="<?php echo base_url(); ?>index.php/farmer/fruits">Fruits</a>
-		  </div>
-            </li>
+
 			
         <li class="nav-item"><a href="<?php echo base_url(); ?>index.php/farmer/about" class="nav-link">About Us</a></li>
         <li class="nav-item"><a href="<?php echo base_url(); ?>index.php/farmer/contact" class="nav-link">Contact Us</a></li>
         
-        <li class="nav-item"><a href="<?php echo base_url(); ?>index.php/login/index" class="nav-link">
+        <li class="nav-item"><a href="#" class="nav-link">
             <?php if(isset($_SESSION['logged_user'])){
               echo ($_SESSION['logged_user']);
               }else{

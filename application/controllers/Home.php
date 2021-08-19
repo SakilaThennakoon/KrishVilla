@@ -46,6 +46,15 @@ class Home extends CI_Controller {
 		
 	}
 
+	public function offer()
+	{	
+
+		$this->load->view('header');
+		$this->load->view('body/offer');
+		$this->load->view('footer');
+		
+	}
+
 	public function profile()
 	{	
 		if(!isset($_SESSION['logged_user'])){

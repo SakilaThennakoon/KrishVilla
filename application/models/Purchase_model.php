@@ -54,19 +54,20 @@ class Purchase_model extends CI_Model
      {
         $query = $this->db->get('orders_item');
         return $query->result_array();
+
      }
 
-     public function pay_total_new($postData)
-     {
-         $data = array(
-            "qty" => $postData['quantity1'],
-            "amount" => $postData['total1'],
-            "product_id" => $postData['category1'],
-            "item_name" => $postData['itemName1']
-         );
-         $query = $this->db->insert('orders_item',$data);
-         return $query; 
-     }
+   //   public function pay_total_new($postData)
+   //   {
+   //       $data = array(
+   //          "qty" => $postData['quantity1'],
+   //          "amount" => $postData['total1'],
+   //          "product_id" => $postData['category1'],
+   //          "item_name" => $postData['itemName1']
+   //       );
+   //       $query = $this->db->insert('orders_item',$data);
+   //       return $query; 
+   //   }
 
 
 }

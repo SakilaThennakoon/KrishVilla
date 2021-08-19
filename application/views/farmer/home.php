@@ -3,68 +3,61 @@
 <div class="container-fluid padding">
     <div class="row text-center welcome">
         <div class="col-12">
-            <h1 class="display-4">Easy 3 Steps To Follow</h1>
-        </div>
-        <hr>
-        <div class="col-12">
-            <p class="lead">The easiest way to your food. Food Ordering System provides fresh delivery
-                with in the 30 minutes and provide free food if order is not on time. So don't wait and start ordering right now!</p>
-        </div>
-    </div>
-</div>
-<div class="container-fluid padding">
-    <div class="row text-center padding">
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            <i class="fas fa-utensils"></i>
-            <h3>Choose A Restaurant</h3>
-            <p>First thing you can do is choose from our restautant partners easily!</p>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-            <i class="fas fa-bullseye"></i>
-            <h3>Choose A Tasty Dish</h3>
-            <p>We've got you covered with menus from over various delivery restaurants online!</p>
-        </div>
-        <div class="col-sm-12 col-md-4">
-        <i class="fas fa-clipboard-check"></i>
-            <h3>Pick Up or Delivery</h3>
-            <p>After all, the food gets delivered or you can pick it up as per your choices!</p>
-        </div>
-    </div>
-    <hr class="my-4">
-</div>
-<div class="container-fluid padding">
-    <div class="row welcome text-center welcome">
-        <div class="col-12">
-            <h1 class="display-4">Popular Dishes</h1>
+            <h1 class="display-4">Welcome to Krish Villa Organic</h1>
         </div>
         <hr>
     </div>
 </div>
-<div class="container-fluid padding dish-card">
-    <div class="row">
-        <?php if(!empty($homeList)) { ?>
-        <?php foreach($homeList as $items) { ?>
-        <div class="col-md-6 col-lg-3 d-flex align-items-stretch">
-            <div class="card mb-4 shadow-sm">
-                <?php $image = $items['image'];?>
-                <img width="260" height="260" class="card-img-top" src="<?php echo base_url().'uploads/'.$image; ?>">
-                <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <h4 class="card-title"><?php echo $items['name']; ?></h4>
-                        <h6 class="text-muted"><b>1 Kg - Rs. <?php echo $items['price']; ?></b></h6>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <?php } ?>
-        <?php } else { ?>
-        <div class="jumbotron">
-            <h1>No records found</h1>
-        </div>
-        <?php } ?>
-    </div>
-    <hr class="my-4">
-</div>
+
+
+<section class="ftco-section ftco-degree-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 ftco-animate">
+						<h2 class="mb-3">Organic farming</h2>
+            <p> organic farming, agricultural system that uses ecologically based pest controls and biological fertilizers derived largely from 
+                animal and plant wastes and nitrogen-fixing cover crops. Modern organic farming was developed as a response to the environmental 
+                harm caused by the use of chemical pesticides and synthetic fertilizers in conventional agriculture, and it has numerous ecological 
+                benefits.
+            </p>
+    </section>
+
+    <section class="ftco-section ftco-degree-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 ftco-animate">
+						<h2 class="mb-3">Organic Farming Methods</h2>
+                <p>Organic farmers grow robust crops without using toxic and persistent pesticides, herbicides, fertilizers or GMOs. They do this by 
+                building up the soil with natural inputs and managing weeds and pests through cultivation, biological controls (such as pest predators), 
+                and diverse crop rotations.
+                <br>
+                They raise healthy livestock without growth hormones, antibiotics or slaughter by-products. Instead, they provide organic feed, verdant 
+                pastures, and ample living room. Organically raised animals are allowed to behave naturally, which reduces stress and encourages strong 
+                immune systems.
+                <br>               
+                Organic farmers proactively manage their fields, continuously building organic matter and improving the condition of the soil. Tools of 
+                the trade include cover crops, crop rotations, animal manures, and compost. Natural, mined rocks, such as lime, also can be used to 
+                balance the soil.
+                <br>            
+                Balanced, living soils produce healthy crops with minimal disease and insect problems, and support strong livestock. The result is 
+                nutritious, good-tasting, health-promoting food, and nontoxic fiber for clothing and other textiles.
+            </p>
+    </section>
+
+    <section class="ftco-section ftco-degree-bg">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 ftco-animate">
+                          <h2 class="mb-3">Advantages of Organic Farmings</h2>
+              <p>Compared with conventional agriculture, organic farming uses fewer pesticides, reduces soil erosion, decreases nitrate leaching into groundwater 
+                and surface water, and recycles animal wastes back into the farm. These benefits are counterbalanced by higher food costs for consumers and 
+                generally lower yields. Indeed, yields of organic crops have been found to be about 25 percent lower overall than conventionally grown crops, 
+                although this can vary considerably depending upon the type of crop. The challenge for future organic agriculture will be to maintain its environmental 
+                benefits, increase yields, and reduce prices while meeting the 
+                challenges of climate change and an increasing world population.
+              </p>
+      </section>
+
 <div class="container-fluid padding">
     <div class="row text-center padding">
         <div class="col-12">

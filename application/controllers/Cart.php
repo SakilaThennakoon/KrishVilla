@@ -83,6 +83,7 @@ class Cart extends CI_Controller {
 		$buy = $this->Purchase_model->pay_total();
 
 		$data =array(
+			
 			"buy" => $buy
 		);
 

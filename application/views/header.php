@@ -79,7 +79,7 @@
               <div class="dropdown-menu" aria-labelledby="dropdown04">
               	<a class="dropdown-item" href="<?php echo base_url(); ?>index.php/category/vegitables">Vegetables</a>
               	<a class="dropdown-item" href="<?php echo base_url(); ?>index.php/category/fruits">Fruits</a>
-				<a class="dropdown-item" href="#">Special Offer</a>
+				<a class="dropdown-item" href="<?php echo base_url(); ?>index.php/home/offer">Special Offer</a>
 		  </div>
             </li>
 			<li class="nav-item"><a href="<?php echo base_url(); ?>index.php/cart/purchase" class="nav-link">Order Now</a></li>

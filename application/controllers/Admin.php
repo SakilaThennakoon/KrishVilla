@@ -52,4 +52,49 @@ class Admin extends CI_Controller {
 
         redirect('admin/category','refresh');
 	}
-}
+
+	public function uploadImg()
+	{
+		$this->load->view('admin/header');
+        $this->load->view('admin/imageUpload');
+        $this->load->view('admin/footer');
+	}
+
+	
+
+	public function imageUpload()
+		{
+			var_dump($_POST);
+			$config['upload_path']          = './uploads/';
+			$config['allowed_types']        = 'gif|jpg|png';
+			// $config['max_size']             = 100;
+			// $config['max_width']            = 1024;
+			// $config['max_height']           = 768;
+
+			$this->load->library('upload', $config);
+
+			if ( ! $this->upload->do_upload('uploadPic')) // this the button id
+			{
+					$error = array('error' => $this->upload->display_errors());
+					echo "error";
+					var_dump($error);
+			}
+			else
+			{
+					$data = array('upload_data' => $this->upload->data());
+					$data = array(
+						"image" => $data['upload_data']['file_name'],
+					 );
+					 $this->db->where('id',0);
+					 $r = $this->db->update('products',$data);
+					// echo 'done';
+
+					redirect('admin/uploadImg','refresh');
+					
+					// var_dump($this->upload->data('file_name'));
+					// $this->load->view('upload_success', $data);
+			}
+		}
+	}
+
+

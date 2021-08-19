@@ -77,10 +77,9 @@
 
 			<li class="nav-item"><a href="<?php echo base_url(); ?>index.php/admin/category" class="nav-link">Add products</a></li>
         <li class="nav-item"><a href="<?php echo base_url(); ?>index.php/home/farm" class="nav-link">Add farms</a></li>
-        <li class="nav-item"><a href="<?php echo base_url(); ?>index.php/home/abou" class="nav-link">About Us</a></li>
+        <li class="nav-item"><a href="<?php echo base_url(); ?>index.php/admin/uploadImg" class="nav-link">Image Upload</a></li>
         <li class="nav-item"><a href="<?php echo base_url(); ?>index.php/home/contac" class="nav-link">Contact Us</a></li>
-        <li class="nav-item cta cta-colored"><a href="<?php echo base_url(); ?>index.php/cart/checkout" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
-		<li class="nav-item"><a href="<?php echo base_url(); ?>index.php/login/index" class="nav-link">
+  		<li class="nav-item"><a href="<?php echo base_url(); ?>index.php/login/index" class="nav-link">
 				<?php if(isset($_SESSION['logged_user'])){
 					echo ($_SESSION['logged_user']);
 					}else{
