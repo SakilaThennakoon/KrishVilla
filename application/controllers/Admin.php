@@ -85,7 +85,7 @@ class Admin extends CI_Controller {
 					$data = array(
 						"image" => $data['upload_data']['file_name'],
 					 );
-					 $this->db->where('id',6);
+					 $this->db->where('id',0);
 					 $r = $this->db->update('products',$data);
 					// echo 'done';
 
