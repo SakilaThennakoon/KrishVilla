@@ -18,7 +18,7 @@
                                 <button id="submit" name="submit" type="submit" class="btn btn-primary">Login</button>
                             </div>
                             <div id="register-link" class="text-right">
-                                <a href="<?php echo base_url(); ?>index.php/login/register" >Register here</a>
+                                <a href="<?php echo base_url(); ?>index.php/login/register" >Customer Register here</a>
                             </div>
                             <div id="register-link" class="text-right">
                                 <a href="<?php echo base_url(); ?>index.php/login/farmer_register" >Farmer Register here</a>

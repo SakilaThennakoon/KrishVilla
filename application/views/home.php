@@ -34,7 +34,7 @@
 <div class="container-fluid padding">
     <div class="row text-center welcome">
         <div class="col-12">
-            <h1 class="display-4">Welcome to the Krish Villa Oraganic</h1>
+            <h1 class="display-4">Welcome to the Krish Villa Organic</h1>
         </div>
         <hr>
     </div>
